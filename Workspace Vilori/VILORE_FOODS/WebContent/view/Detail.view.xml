@@ -1,0 +1,276 @@
+<?xml-stylesheet href="css/main.css"?>
+<core:View
+	controllerName="VILORE_FOODS.view.Detail"
+	xmlns="sap.m"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:core="sap.ui.core" >
+	<?xml-stylesheet type="text/css" href="view/main.css"?>
+	<Page
+		title="{i18n>DetailTitle}"
+		id="PODetail"
+		class="sapUiFioriObjectPage"
+		showNavButton="{device>/isPhone}"
+		navButtonPress="handleNavButtonPress" >
+	
+		<ObjectHeader
+			title="{PoNumber}"
+			number=""
+			numberUnit="" >
+			<attributes>
+				<ObjectAttribute text="{product}" />
+				<ObjectAttribute text="{CreatedBy}" />
+				<ObjectAttribute text="{
+					path: 'CreatedAt',
+					formatter: 'VILORE_FOODS.util.Formatter.date'
+				}" />
+			</attributes>
+			<firstStatus>
+				
+			</firstStatus>
+		</ObjectHeader>
+		
+			<IconTabBar expanded="{device&gt;/isNoPhone}" text="vendor">
+					<items>
+						<IconTabFilter icon="sap-icon://supplier">
+							<form:SimpleForm id="SupplierForm" minWidth="3000"  >		
+							    
+						    </form:SimpleForm>
+							   <Table id="1"  border="0" >
+								<columns>
+									<Column   hAlign="Left" >
+										<header><Label text="Driver Name" /></header>
+									</Column>
+									<Column  hAlign="Left">
+										<header><Input text="driverNM" id="DriverNm" name="drivernm" width="100%"></Input></header>
+									</Column>
+									
+									<Column   hAlign="Left">
+										<header><Label text="Driver License" /></header>
+									</Column>
+									<Column  hAlign="Left">
+										<header><Input text="DriverLicense" id="DriverLicense"  width="100%"></Input></header>
+									</Column>
+								</columns>
+								<ColumnListItem >
+									<cells>										
+										<Text text="Freight Company"  hAlign="Left" />										
+										<Input text="FreightCompany" id="FreightCompany"   width="100%"></Input>
+										
+										<Text text="Seal"  hAlign="Left" />
+										<Input text="Seal" id="Seal"  width="100%"></Input>
+									</cells>									
+								</ColumnListItem>													
+							</Table> 
+							
+								 					 	 
+								 
+																
+								
+			
+							
+							   	<Table id="2"  border="0" >
+								<columns>
+									<Column>
+										<header><Label text="Truck "   hAlign="Left"/></header>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Left">
+										<header><Input text="Truck" value="" id="Truck" name="Truck" height="50%" width="100%"></Input></header>
+									</Column>
+									
+									<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Left">
+										<header><Label text="Trailer"    hAlign="Left" /></header>
+									</Column>
+									<Column>
+										<header><Input text="Trailer" id="Trailer" height="40%"  width="100%"></Input></header>
+									</Column>
+								</columns>
+								<ColumnListItem >
+									<cells>										
+										<Text text="Trailer Plate"   hAlign="Left" />										
+										<Input text="TrailerPlate" id="TrailerPlate"  width="100%"></Input>
+										
+										<Text text="Plate"   hAlign="Left" />
+										<Input text="Plate" id="Plate"  style="background-color: red;" width="100%"></Input>
+									</cells>									
+								</ColumnListItem>													
+							</Table> 		
+								 		
+					
+							   	
+							   	
+							   	
+							   	
+							   	
+							   	
+							   	
+							   	
+							   	
+							   	<Table id="3"  border="0" >
+								<columns>
+								    
+								    <Column  hAlign="Left">
+										<header>
+										    <Table >	
+										        <columns>									    
+													<Column  hAlign="Left">
+															<header><Label text="Door" /> </header>
+														</Column>
+														<Column hAlign="Left"  class="onoffswitch" >
+														<header  vAlign="Top" hAlign="Left" class="onoffswitch" >
+														<Switch Checkbox="door"  name="door"  id="door" data-sap-ui-swt="No"></Switch></header>
+														</Column>
+								    			</columns>									    			
+										        <ColumnListItem >
+													<cells>										
+														<Text  text="Chasis"  hAlign="Left" />
+														<Switch Checkbox="false" value="0"   name="chasis" id="chasis"></Switch>
+													</cells>
+												</ColumnListItem>							    		
+								    		</Table> 
+								    </header>
+									</Column>
+									
+								    
+									<Column  hAlign="Left">
+										<header> </header>
+									</Column>
+									
+								     <Column  hAlign="Left">
+										<header>
+										    <Table >	
+										        <columns>									    
+													<Column  hAlign="Left">
+															<header><Label text="Bumper" /> </header>
+														</Column>
+														<Column hAlign="Left">
+																<header  hAlign="Left" ><Switch  Checkbox="bumper" name="bumper" id="bumper"></Switch></header>
+														</Column>
+								    			</columns>									    			
+										        <ColumnListItem >
+													<cells  style="border-style:solid;border-color:#DE2121;">										
+														<Text  text="Tires Rimns"  hAlign="Left" />
+														<Switch  Checkbox="tiri" name="tiri" id="tiri"></Switch>
+													</cells>
+												</ColumnListItem>							    		
+								    		</Table> 
+								    </header>
+									</Column>
+									
+								     
+									<Column  >
+										<header> </header>
+									</Column>
+									
+								      <Column  hAlign="Left">
+										<header>
+										    <Table border="0">	
+										        <columns>									    
+													<Column  hAlign="Left">
+															<header><Label text="Hinges" /> </header>
+														</Column>
+														<Column hAlign="Left">
+																<header  hAlign="Left" > <Switch Value="Yes" Checkbox="hinges" name="hinges" style="color: #FF0000;" id="hinges"></Switch></header>
+														</Column>
+								    			</columns>									    			
+										        <ColumnListItem >
+													<cells>										
+														<Text  text="Fifth Wheel"  hAlign="Left" />
+														<Switch  Checkbox="Yes"  name="fifth_wheel" id="fifth_wheel"></Switch>
+													</cells>
+												</ColumnListItem>							    		
+								    		</Table> 
+								    </header>
+									</Column>
+									
+								    
+									
+								
+									
+									
+								</columns>
+								<ColumnListItem >
+									<cells>		
+									     <Button
+						                    text="{i18n>Add Picture}"
+						                    type="Accept"
+						                    icon="sap-icon://accept"
+						                    press="handleApprove" />
+																	
+										<Text  text=""  hAlign="Left" />
+										<Text  text=""  hAlign="Left" />
+										<Text  text=""  hAlign="Left" />
+										<Text text=""  hAlign="Left" />
+										
+									</cells>									
+								</ColumnListItem>													
+							</Table> 	
+								 								
+						</IconTabFilter>	
+						
+			       
+	 
+    
+	 
+                		
+			   </items>
+		</IconTabBar>
+		
+			
+                         <Table headerText="{i18n&gt;LineItemTableHeader}" items="{PurchaseOrderItems}">
+								<columns>
+								    <Column>
+										<header><Label text="Item No." /></header>
+									</Column>
+									<Column>
+										<header><Label text="Product ID" /></header>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+										<header><Label text="Product Description" id="prddesc" /></header>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+										<header><Label text="Quantity" /></header>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+										<header><Label text="UoM" /></header>
+									</Column>
+									<Column>
+										<header><Label text="Vendor Batch" /></header>
+									</Column>
+									<Column>
+										<header><Label text="Receiving Notes" /></header>
+									</Column>
+								</columns>
+								<ColumnListItem type="Navigation" press="handleLineItemPress"  numberUnit="items" title="{PoNumber}" >
+									<cells>
+									    <Text text="{PoItem}" id="PoItem" />
+										<Text text="{PurMat}" id="PurMat" />
+										<Text  hAlign="Left" text="{ShortText}" id="ShortText" />
+										<Text text="{DispQuan}" id="DispQuan" />
+										<Text text="{Unit}" id="Unit" />
+										<Input text="vb" size="5" id="vb"></Input>
+										<Input text="vb"  size="5" id="rn"></Input>
+										
+										
+										<ObjectNumber number="it" numberUnit="pan" id="objnum" />
+									</cells>
+								</ColumnListItem>
+							</Table>  		   
+			
+		
+		
+		<footer>          
+			<Bar>
+				<contentRight>
+					<Button
+						text="{i18n>ApproveButtonText}"
+						type="Accept"
+						icon="sap-icon://accept"
+						press="handleApprove" />
+					
+					<Button tap="onCancel" text="{i18n>CANCEL}"></Button>
+				</contentRight>
+			</Bar>
+		</footer>
+		
+	</Page>
+</core:View>

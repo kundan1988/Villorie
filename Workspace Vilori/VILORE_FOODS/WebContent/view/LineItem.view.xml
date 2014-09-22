@@ -1,0 +1,68 @@
+<core:View
+	controllerName="VILORE_FOODS.view.LineItem"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core" >
+	<Page
+		id="page"
+		title=" {i18n>LineItemTitle}"
+		showNavButton="true"
+		navButtonPress="handleNavBack" >
+		
+	
+	    
+		<footer>
+			<Bar>
+			</Bar>
+		</footer>
+		<content>
+			<ObjectHeader
+				title="{PoNumber}"
+				number="{GrossAmount}"
+				numberUnit="{CurrencyCode}" >
+				<attributes>
+					<ObjectAttribute text="{
+						path:'DeliveryDate',
+						formatter:'VILORE_FOODS.util.Formatter.date'
+					}" />
+					<ObjectAttribute text="{
+						path:'Quantity',
+						formatter:'VILORE_FOODS.util.Formatter.quantity'
+					}" />
+				</attributes>
+			</ObjectHeader>
+		</content>
+		
+		    <Table >
+								<columns>
+									<Column>
+										<header><Label text="Product Item" /></header>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+										<header><Label text="Product Description" id="prddesc" /></header>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+										<header><Label text="Quantity" /></header>
+									</Column>
+									<Column>
+										<header><Label text="PurMat" /></header>
+									</Column>
+									<Column>
+										<header><Label text="Unit" /></header>
+									</Column>
+								</columns>
+								<ColumnListItem   >
+									<cells>
+										<Text text="{PoItem}" id="PoItem" />
+										<Text text="{ShortText}" id="ShortText" />
+										<Text text="{DispQuan}" id="DispQuan" />
+										
+										<Text text="{PurMat}" id="count"  />
+										<Text text="{Unit}" id="Unit"  />
+										
+										<ObjectNumber number="it" numberUnit="" />
+									</cells>
+								</ColumnListItem>
+							</Table>  		
+	    
+	</Page>
+</core:View>
